@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Baker - Bakery Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/animate/animate.min.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+    
+    <style>
+        .page-header {
+            background-image: none;
+        
+        }
+        /* style.css or your custom CSS file */
+.page-header {
+    background-image: url('https://c4.wallpaperflare.com/wallpaper/826/118/397/tesla-tesla-roadster-ultrawide-hd-wallpaper-thumb.jpg'); /* Update the path to your new image */
+    background-size: cover; /* Optional: Adjust the background size */
+    padding-top: 100px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 10px;
+}
+
+th {
+    background-color: black;
+}
+
+.button {
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.button {
+    padding: 8px 23px; /* Adjust padding for both height and width */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; /* Adjust font size */
+    margin: 2px;
+    cursor: pointer;
+}
+
+.button.accept {
+    background-color: green;
+    color: white;
+}
+
+.button.reject {
+    background-color: red;
+    color: white;
+}
+        
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid top-bar bg-dark text-light px-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="row gx-0 align-items-center d-none d-lg-flex">
+            <div class="col-lg-6 px-5 text-start">
+                <ol class="breadcrumb mb-0">
+                   <h5> <li class="breadcrumb-item"><a class="small text-light" href="#">EV</a></li></h5>
+                    {% comment %} <li class="breadcrumb-item"><a class="small text-light" href="#">Career</a></li>
+                    <li class="breadcrumb-item"><a class="small text-light" href="#">Terms</a></li>
+                    <li class="breadcrumb-item"><a class="small text-light" href="#">Privacy</a></li> {% endcomment %}
+                </ol>
+            </div>
+            <div class="col-lg-6 px-5 text-end">
+                <small>Follow us:</small>
+                <div class="h-100 d-inline-flex align-items-center">
+                    <a class="btn-lg-square text-primary border-end rounded-0" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn-lg-square text-primary border-end rounded-0" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn-lg-square text-primary border-end rounded-0" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn-lg-square text-primary pe-0" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+        <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
+            <h1 class="text-primary m-0"></h1>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto p-4 p-lg-0">
+                <a href="uhome" class="nav-item nav-link">Home</a>
+                <a href="chome" class="nav-item nav-link"></a>
+            
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+      <!-- Page Header Start -->
+      <div class="container-fluid page-header py-6 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center pt-5 pb-3">
+            <h1 class="display-4 text-white animated slideInDown mb-3">Orders</h1>
+            {% comment %} <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                    <li class="breadcrumb-item text-primary active" aria-current="page">Contact</li>
+                </ol>
+            </nav> {% endcomment %}
+        </div>
+    </div>
+    <center>
+        <h3>Station Orders</h3>
+    </center>
+  
+      <table>
+        <thead>
+
+          <tr>
+
+            <th>Location</th>
+            <th>Address</th>
+            <th>Total Connectors</th>
+            <th>Time Slot</th>
+            <th>Rate</th>
+            <th>Status</th>
+            <th>Payment</th>
+            {% comment %} <th>Pay status</th> {% endcomment %}
+
+
+
+
+
+
+            
+{% comment %} {{sum}} {% endcomment %}
+          </tr>
+        </thead>
+        {% for data in data %}
+        <tbody>
+          <tr>
+            <td>{{data.csLocation}}</td>
+            <td>{{data.csAddress}}</td>
+            <td>{{data.Totalconnectors}}</td>
+            <td>{{data.timeSlot}}</td>
+            <td>{{data.Rate}}</td>
+            {% if data.approved %}
+            <td><h6>Approved</h6> </td>
+            {% else %}
+            <td><h6>Pending</h6> </td>
+            {% endif %} 
+            {% if data.approved %} 
+            <td><a href="{% url 'spay' data.id %}"  class="btn btn-success px-3 d-none d-lg-block">Pay</a></td>
+            {% else %}
+            <td></td>
+            {% endif %}
+            
+            {% comment %} {% if data.status %}
+            <td>Paid</td>
+            {% else %}
+            <td>Pending</td>
+            {% endif %} {% endcomment %}
+            
+          </tr>
+       
+        </tbody>
+        {% endfor %}
+        {% comment %} <a href="{% url 'checkout'  %}" class="button station-details">checkout</a> {% endcomment %}
+
+      </table>
+    
+      <br><br><br>
+    </div>
+    <center>
+        <h3>Vehicle Orders</h3>
+    </center>
+    <br>
+  
+      <table>
+        <thead>
+
+          <tr>
+
+            <th>Company Name</th>
+            <th>Model</th>
+            <th>Seating capacity</th>
+            <th>Date</th>
+            <th>Rate</th>
+            <th>Status</th>
+
+            {% comment %} <th>Payment</th> {% endcomment %}
+            {% comment %} <th>Pay status</th> {% endcomment %}
+
+
+
+
+            
+
+          </tr>
+        </thead>
+        {% for qt in qt %}
+        <tbody>
+          <tr>
+            <td>{{qt.VehName}}</td>
+            <td>{{qt.VehModel}}</td>
+            <td>{{qt.VehSeat}}</td>
+            <td>{{qt.Date}}</td>
+            <td>{{qt.VehRate}}</td>
+            {% if qt.approved %}
+            <td><h6>Approved</h6> </td>
+            {% else %}
+            <td><h6>Pending</h6> </td>
+            {% endif %}
+            
+            {% comment %} {% if qt.approved %} 
+            <td><a href="{% url 'vpay' qt.id %}"  class="btn btn-success px-3 d-none d-lg-block">Pay</a></td>
+            {% else %}
+            <td></td>
+{% endif %} {% endcomment %}
+
+{% comment %} {% if qt.status %}
+            <td>Paid</td>
+            {% else %}
+            <td>Pending</td>
+            {% endif %} {% endcomment %}
+          </tr>
+       
+        </tbody>
+        {% endfor %}
+      </table>
+    
+
+
+<br><br><br><br>
+  <!-- Copyright Start -->
+  <div class="container-fluid copyright text-light py-4 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                {% comment %} &copy; <a href="#">Your Site Name</a>, All Right Reserved. {% endcomment %}
+            </div>
+            <div class="col-md-6 text-center text-md-end"><br>
+                <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                {% comment %} Designed By <a href="https://htmlcodex.com">HTML Codex</a>
+                <br>Distributed By: <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a> {% endcomment %}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Copyright End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js'%}"></script>
+    <script src="{% static 'lib/easing/easing.min.js'%}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js'%}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js'%}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js'%}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js'%}"></script>
+</body>
+
+</html>

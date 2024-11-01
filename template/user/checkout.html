@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Restoran - Bootstrap Restaurant Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/animate/animate.min.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css'%}" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+    {% comment %} <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&display=swap');
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Playfair Display', serif;
+}
+body{ background:url(https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1776&q=80);
+  background-size:cover;
+  background-position:right;
+  background-attachment:fixed;
+}
+#header{
+  margin:20px;
+}
+#header>h1{
+  text-align:center;
+  font-size:3rem;
+}
+#header>p{
+  text-align:center;
+  font-size:1.5rem;
+  font-style:italic;
+}
+.container{
+  
+  
+  display: grid;
+  flex-direction:row;
+  flex-wrap:wrap
+  width:100vw;
+  align:left:
+  
+  justify-content:flex-end;
+  
+  padding:40px 20px;
+}
+.card{
+  display:flex;
+  flex-direction:column;
+  width:400px;
+  margin-bottom:60px;
+}
+.card>div{
+  box-shadow:0 15px 20px 0 rgba(0,0,0,0.5);
+}
+.card-image{
+  width:400px;
+  height:250px;
+}
+.card-image>img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:bottom;
+}
+.card-text{
+  margin:-30px auto;
+  margin-bottom:-50px;
+  height:200px;
+  width:300px;
+  background-color:#1D1C20;
+  color:#fff;
+  padding:20px;
+}
+.card-meal-type{
+  font-style:italic;
+}
+.card-title{
+  font-size:2.2rem;
+  margin-bottom:20px;
+  margin-top:5px;
+}
+.card-body{
+  font-size:1.25rem;
+}
+.card-price{
+  width:100px;
+  height:100px;
+  background-color:#970C0A;
+  color:#fff;
+  margin-left:auto;
+  font-size:2rem;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+    </style> {% endcomment %}
+    {% comment %} <style>
+        $primary-color: #fff;
+$border-radius: 5px;
+$black-color: #351897;
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+ background-color: #c2a3d1;
+ font-family: Arial, Helvetica, sans-serif;
+ display: grid;
+ place-items: center;
+ min-height: 100vh;
+}
+
+.contains {
+ background-color: $primary-color;
+ position: relative;
+ display: grid;
+ grid-template-columns: 500px 600px;
+ border-radius: $border-radius;
+ box-shadow: 0 15px 20px rgba(0, 0, 0, 0.356);
+ img {
+  width: 400px;
+  height: 300px;
+  border-radius: $border-radius 0 0 $border-radius;
+ }
+ .btn {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  background-color: #fc9400;
+  color: $primary-color;
+  padding: 22px 45px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-radius: $border-radius;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.294);
+  i {
+   margin-left: 20px;
+   font-size: 1.5rem;
+  }
+ }
+}
+.contain {
+ padding: 40px 40px 0;
+ h1 {
+  color: $black-color;
+  font-weight: 400;
+ }
+ .contain__text__star span {
+  font-size: 0.8rem;
+  color: #ffa800;
+  margin: -5px 0 20px;
+ }
+ p {
+  font-size: 0.9rem;
+ }
+ .contain__text__timing {
+  display: flex;
+  margin: 20px 0 10px;
+  .container__text__timing_time {
+   margin-right: 40px;
+  }
+  h2 {
+   margin-bottom: 5px;
+   font-size: 1rem;
+   font-weight: 400;
+   color: #818189;
+  }
+
+  
+  p {
+   color: $black-color;
+   font-weight: bold;
+   font-size: 1.2rem;
+  }
+ }
+} {% endcomment %}
+
+
+        </style>
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Restoran</h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0 pe-4">
+                        {% comment %} <a href="index.html" class="nav-item nav-link">Home</a> {% endcomment %}
+                        {% comment %} <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="service.html" class="nav-item nav-link active">Service</a>
+                        <a href="menu.html" class="nav-item nav-link">Menu</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="booking.html" class="dropdown-item">Booking</a>
+                                <a href="team.html" class="dropdown-item">Our Team</a>
+                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a> {% endcomment %}
+                    </div>
+                    <a href="userhome" class="btn btn-primary py-2 px-4">Back</a>
+                </div>
+            </nav>
+
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+<div class="add-products">  
+    <div class="container" >   
+                <div class="border rounded p-4 m-4"  >
+                    
+                 
+            
+                  <div class="card text-center m-5">
+                    <div class="card-footer text-muted">
+                    </div>
+                    <div class="card-body">
+                        
+                      <h1 class="card-title"><b>Total Price:{{a}}</b> </h1>
+                      <p class="card-text">  <img src="{% static 'img/pay.png' %}"> </p>
+                      <center><button id="rzp-button1" class="btn btn-primary ">Pay with Razorpay</button><center>
+            
+                      <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+                      <script>
+                      var options = {
+                          "key": "{{api_key}}", // Enter the Key ID generated from the Dashboard
+                          "amount": "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                          "currency": "INR",
+                          "name": "Acme Corp",
+                          "description": "Test Transaction",
+                          "image": "https://example.com/your_logo",
+                          "order_id": "{{order_id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                          "handler": function (response){
+                              alert(response.razorpay_payment_id);
+                              alert(response.razorpay_order_id);
+                              alert(response.razorpay_signature)
+                          },
+                          "prefill": {
+                              "name": "Gaurav Kumar",
+                              "email": "gaurav.kumar@example.com",
+                              "contact": "9999999999"
+                          },
+                          "notes": {
+                              "address": "Razorpay Corporate Office"
+                          },
+                          "theme": {
+                              "color": "#3399cc"
+                          }
+                      };
+                      var rzp1 = new Razorpay(options);
+                      rzp1.on('payment.failed', function (response){
+                              alert(response.error.code);
+                              alert(response.error.description);
+                              alert(response.error.source);
+                              alert(response.error.step);
+                              alert(response.error.reason);
+                              alert(response.error.metadata.order_id);
+                              alert(response.error.metadata.payment_id);
+                      });
+                      document.getElementById('rzp-button1').onclick = function(e){
+                          rzp1.open();
+                          e.preventDefault();
+                      }
+                      </script>
+            
+            
+
+
+
+            </div>
+          
+            
+        </div>     
+    </div>
+</div>
+
+
+
+
+<script>  
+    window.onload = function () {
+        document.querySelector('.cont_modal').className = "cont_modal";
+      }
+      
+      let c = 0;
+      function open_close() {
+        document.querySelector('.cont_modal').className =
+          c % 2 == 0 ? "cont_modal cont_modal_active" : "cont_modal";
+        c++;
+      }
+       
+</script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'lib/wow/wow.min.js'%}"></script>
+<script src="{% static 'lib/easing/easing.min.js'%}"></script>
+<script src="{% static 'lib/waypoints/waypoints.min.js'%}"></script>
+<script src="{% static 'lib/counterup/counterup.min.js'%}"></script>
+<script src="{% static 'lib/owlcarousel/owl.carousel.min.js'%}"></script>
+<script src="{% static 'lib/tempusdominus/js/moment.min.js'%}"></script>
+<script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js'%}"></script>
+<script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js'%}"></script>
+
+<!-- Template Javascript -->
+<script src="{% static 'js/main.js'%}"></script>
+</body>
+
+</html>
