@@ -26,3 +26,28 @@ Before you begin, ensure you have the following installed on your machine:
    First, clone the repository to your local machine. Open your terminal (Command Prompt, PowerShell, or Git Bash) and run:
    ```bash
    git clone https://github.com/abrahampeter10/EV_Charging.git
+
+2. **Navigate to the project directory:**
+   
+   ```bash
+   cd evpro
+
+3. **Create a virutal environment:**
+   
+   ```bash
+   python -m venv ev
+
+4. **Activate the virtual environment:**
+   
+   ```bash
+   source ev/bin/activate # Linux/macOS
+   .\ev\Scripts\activate # Windows
+
+5. **Start the Django server:**
+   
+   ```bash
+   python manage.py runserver
+
+**The server will start at http://127.0.0.1:8000/ .**
+
+
